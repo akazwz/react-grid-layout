@@ -1,4 +1,3 @@
-
 .main {
     width: 100%;
     height: 100%;
@@ -24,5 +23,15 @@
 
 .two {
     background-color: darkcyan;
+    padding: 0;
+}
+
+.three {
+    background-color: darkslategray;
+    padding: 0;
+}
+
+.four {
+    background-color: darksalmon;
     padding: 0;
 }

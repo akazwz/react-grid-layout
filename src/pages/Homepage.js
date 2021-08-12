@@ -40,7 +40,7 @@ const Homepage = (props) => {
         currentLayoutsLocal = layouts
     }
 
-    const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
+    const [currentBreakpoint, setCurrentBreakpoint] = useState('xxs');
     const [currentLayouts, setCurrentLayouts] = useState(currentLayoutsLocal);
 
     const cols = {lg: 12, md: 10, sm: 6, xs: 4, xxs: 2};
