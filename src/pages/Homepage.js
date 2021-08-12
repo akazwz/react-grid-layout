@@ -6,7 +6,6 @@ import 'react-resizable/css/styles.css';
 
 const Homepage = () => {
     const ResponsiveGridLayout = WidthProvider(Responsive);
-
     const layouts = {
         lg: [
             {x: 0, y: 0, w: 3, h: 2, i: 'a',},
@@ -58,15 +57,20 @@ const Homepage = () => {
             console.log('layout: h:' + layout[i].h);
             console.log('layout: i:' + layout[i].i);
         }
-        delete (layouts[currentBreakpoint.toString()]);
-        layouts[currentBreakpoint.toString()] = layout;
-        localStorage.setItem('layouts', JSON.stringify(layouts));
+        let localLayouts = JSON.parse(JSON.stringify(layouts));
+        delete (localLayouts[currentBreakpoint.toString()]);
+        localLayouts[currentBreakpoint.toString()] = layout;
+        localStorage.setItem('layouts', JSON.stringify(localLayouts));
     };
     const handleOnDrop = (eleParams) => {
         console.log('on drop:' + eleParams);
     };
+    const handleBtnResetClick = () => {
+        setCurrentLayouts(layouts);
+    };
     return (
         <>
+            <button onClick={handleBtnResetClick}>reset</button>
             <ResponsiveGridLayout
                 breakpoints={breakpoints}
                 cols={cols}
