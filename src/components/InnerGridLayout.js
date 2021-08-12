@@ -8,57 +8,55 @@ const InnerGridLayout = () => {
     const breakpoints = {lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0};
     const layouts = {
         lg: [
-            {x: 0, y: 0, w: 1, h: 1, i: '1',},
-            {x: 0, y: 0, w: 1, h: 1, i: '2',},
-            {x: 0, y: 0, w: 1, h: 1, i: '3',},
-            {x: 0, y: 0, w: 1, h: 1, i: '4',},
+            {x: 0, y: 0, w: 1, h: 2, i: 'one',},
+            {x: 0, y: 0, w: 1, h: 2, i: 'two',},
+            {x: 0, y: 0, w: 1, h: 1, i: 'three',},
+            {x: 0, y: 0, w: 1, h: 1, i: 'four',},
         ],
         md: [
-            {x: 0, y: 0, w: 1, h: 1, i: '1',},
-            {x: 0, y: 0, w: 1, h: 1, i: '2',},
-            {x: 0, y: 0, w: 1, h: 1, i: '3',},
-            {x: 0, y: 0, w: 1, h: 1, i: '4',},
+            {x: 0, y: 0, w: 1, h: 2, i: 'one',},
+            {x: 0, y: 0, w: 1, h: 2, i: 'two',},
+            {x: 0, y: 0, w: 1, h: 1, i: 'three',},
+            {x: 0, y: 0, w: 1, h: 1, i: 'four',},
         ],
         sm: [
-            {x: 0, y: 0, w: 1, h: 1, i: '1',},
-            {x: 0, y: 0, w: 1, h: 1, i: '2',},
-            {x: 0, y: 0, w: 1, h: 1, i: '3',},
-            {x: 0, y: 0, w: 1, h: 1, i: '4',},
+            {x: 0, y: 0, w: 1, h: 2, i: 'one',},
+            {x: 0, y: 0, w: 1, h: 2, i: 'two',},
+            {x: 0, y: 0, w: 1, h: 1, i: 'three',},
+            {x: 0, y: 0, w: 1, h: 1, i: 'four',},
         ],
         xs: [
-            {x: 0, y: 0, w: 1, h: 1, i: '1',},
-            {x: 0, y: 0, w: 1, h: 1, i: '2',},
-            {x: 0, y: 0, w: 1, h: 1, i: '3',},
-            {x: 0, y: 0, w: 1, h: 1, i: '4',},
+            {x: 0, y: 0, w: 2, h: 2, i: 'one',},
+            {x: 0, y: 0, w: 2, h: 2, i: 'two',},
+            {x: 0, y: 0, w: 1, h: 1, i: 'three',},
+            {x: 0, y: 0, w: 1, h: 1, i: 'four',},
         ],
         xxs: [
-            {x: 0, y: 0, w: 1, h: 2, i: '1',},
-            {x: 0, y: 0, w: 1, h: 2, i: '2',},
-            {x: 0, y: 0, w: 1, h: 1, i: '3',},
-            {x: 0, y: 0, w: 1, h: 1, i: '4',},
+            {x: 0, y: 0, w: 1, h: 2, i: 'one',},
+            {x: 0, y: 0, w: 1, h: 2, i: 'two',},
+            {x: 0, y: 0, w: 1, h: 1, i: 'three',},
+            {x: 0, y: 0, w: 1, h: 1, i: 'four',},
         ],
     };
     return (
-        <div className="main">
-            <ResponsiveGridLayout
-                breakpoints={breakpoints}
-                cols={cols}
-                layouts={layouts}
-            >
-                <div key="1" className="1">
-                    <span className="text">1</span>
-                </div>
-                <div key="2" className="2">
-                    <span className="text">2</span>
-                </div>
-                <div key="3" className="3">
-                    <span className="text">3</span>
-                </div>
-                <div key="4" className="4">
-                    <span className="text">4</span>
-                </div>
-            </ResponsiveGridLayout>
-        </div>
+        <ResponsiveGridLayout
+            breakpoints={breakpoints}
+            cols={cols}
+            layouts={layouts}
+        >
+            <div key="one" className="one">
+                <span className="text">one</span>
+            </div>
+            <div key="two" className="two">
+                <span className="text">two</span>
+            </div>
+            <div key="three" className="three">
+                <span className="text">three</span>
+            </div>
+            <div key="four" className="four">
+                <span className="text">four</span>
+            </div>
+        </ResponsiveGridLayout>
     );
 };
 
