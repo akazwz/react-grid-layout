@@ -6,6 +6,7 @@ import 'react-resizable/css/styles.css';
 
 const Homepage = () => {
     const ResponsiveGridLayout = WidthProvider(Responsive);
+
     const layouts = {
         lg: [
             {x: 0, y: 0, w: 3, h: 2, i: 'a',},
@@ -34,8 +35,13 @@ const Homepage = () => {
         ],
     };
 
+    let currentLayoutsLocal = JSON.parse(localStorage.getItem('layouts'));
+    if (!currentLayoutsLocal) {
+        currentLayoutsLocal = layouts
+    }
+
     const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
-    const [currentLayouts, setCurrentLayouts] = useState(layouts);
+    const [currentLayouts, setCurrentLayouts] = useState(currentLayoutsLocal);
 
     const cols = {lg: 12, md: 10, sm: 6, xs: 4, xxs: 2};
     const breakpoints = {lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0};
@@ -52,6 +58,9 @@ const Homepage = () => {
             console.log('layout: h:' + layout[i].h);
             console.log('layout: i:' + layout[i].i);
         }
+        delete (layouts[currentBreakpoint.toString()]);
+        layouts[currentBreakpoint.toString()] = layout;
+        localStorage.setItem('layouts', JSON.stringify(layouts));
     };
     const handleOnDrop = (eleParams) => {
         console.log('on drop:' + eleParams);
@@ -62,7 +71,6 @@ const Homepage = () => {
                 breakpoints={breakpoints}
                 cols={cols}
                 layouts={currentLayouts}
-                compactType="null"
                 onBreakpointChange={handleOnBreakpointChange}
                 onLayoutChange={handleOnLayoutChange}
                 onDrop={handleOnDrop}
